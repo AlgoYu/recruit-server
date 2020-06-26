@@ -7,110 +7,47 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["recruit-server/controllers:AdminController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:AdminController"],
 		beego.ControllerComments{
-			Method:           "Post",
-			Router:           `/`,
+			Method:           "AddAdmin",
+			Router:           `/AddAdmin`,
 			AllowHTTPMethods: []string{"post"},
 			MethodParams:     param.Make(),
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["recruit-server/controllers:AdminController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:AdminController"],
+		beego.ControllerComments{
+			Method:           "GetOne",
+			Router:           `/GetAdmin/:id`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams:     param.Make(),
+			Filters:          nil,
+			Params:           nil})
+
+	beego.GlobalControllerRouter["recruit-server/controllers:AdminController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:AdminController"],
 		beego.ControllerComments{
 			Method:           "GetAll",
-			Router:           `/`,
+			Router:           `/GetAll`,
 			AllowHTTPMethods: []string{"get"},
 			MethodParams:     param.Make(),
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["recruit-server/controllers:AdminController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:AdminController"],
 		beego.ControllerComments{
-			Method:           "Get",
-			Router:           `/:objectId`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"],
-		beego.ControllerComments{
-			Method:           "Put",
-			Router:           `/:objectId`,
+			Method:           "Modify",
+			Router:           `/ModifyAdmin/:id`,
 			AllowHTTPMethods: []string{"put"},
 			MethodParams:     param.Make(),
 			Filters:          nil,
 			Params:           nil})
 
-	beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["recruit-server/controllers:AdminController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:AdminController"],
 		beego.ControllerComments{
 			Method:           "Delete",
-			Router:           `/:objectId`,
+			Router:           `/delete/:id`,
 			AllowHTTPMethods: []string{"delete"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "Post",
-			Router:           `/`,
-			AllowHTTPMethods: []string{"post"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "GetAll",
-			Router:           `/`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "Get",
-			Router:           `/:uid`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "Put",
-			Router:           `/:uid`,
-			AllowHTTPMethods: []string{"put"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "Delete",
-			Router:           `/:uid`,
-			AllowHTTPMethods: []string{"delete"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "Login",
-			Router:           `/login`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams:     param.Make(),
-			Filters:          nil,
-			Params:           nil})
-
-	beego.GlobalControllerRouter["recruit-server/controllers:UserController"] = append(beego.GlobalControllerRouter["recruit-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method:           "Logout",
-			Router:           `/logout`,
-			AllowHTTPMethods: []string{"get"},
 			MethodParams:     param.Make(),
 			Filters:          nil,
 			Params:           nil})
