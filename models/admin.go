@@ -40,6 +40,17 @@ func GetAdminById(id int64) (v *Admin, err error) {
 	return nil, err
 }
 
+// GetAdminById retrieves Admin by Id. Returns error if
+// Id doesn't exist
+func GetAdminByName(name string) (v *Admin, err error) {
+	o := orm.NewOrm()
+	v = &Admin{Name: name}
+	if err = o.QueryTable(new(Admin)).Filter("name", name).One(v); err == nil {
+		return v, nil
+	}
+	return nil, err
+}
+
 // GetAllAdmin retrieves all Admin matches certain condition. Returns empty list if
 // no records exist
 func GetAllAdmin(query map[string]string, fields []string, sortby []string, order []string,

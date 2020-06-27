@@ -1,8 +1,8 @@
 package controllers
 
 import (
+	"anydevelop.cn/recruit-server/common"
 	"github.com/astaxie/beego"
-	"recruit-server/common"
 )
 
 type AdminBase struct {

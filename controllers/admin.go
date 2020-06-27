@@ -1,10 +1,10 @@
 package controllers
 
 import (
+	"anydevelop.cn/recruit-server/common"
+	"anydevelop.cn/recruit-server/models"
 	"encoding/json"
 	"errors"
-	"recruit-server/common"
-	"recruit-server/models"
 	"strconv"
 	"strings"
 )

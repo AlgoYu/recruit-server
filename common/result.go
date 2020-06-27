@@ -11,6 +11,10 @@ func NewResult(OK bool, MSG string, DATA interface{}) *Result {
 	return &Result{OK: OK, MSG: MSG, DATA: DATA}
 }
 
+func No() *Result {
+	return &Result{OK: false}
+}
+
 func Ok() *Result {
 	return &Result{OK: true}
 }

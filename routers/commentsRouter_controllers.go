@@ -52,4 +52,13 @@ func init() {
 			Filters:          nil,
 			Params:           nil})
 
+	beego.GlobalControllerRouter["recruit-server/controllers:LoginAdmin"] = append(beego.GlobalControllerRouter["recruit-server/controllers:LoginAdmin"],
+		beego.ControllerComments{
+			Method:           "LoginAdmin",
+			Router:           `/LoginAdmin`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams:     param.Make(),
+			Filters:          nil,
+			Params:           nil})
+
 }
