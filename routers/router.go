@@ -9,10 +9,13 @@ package routers
 
 import (
 	"anydevelop.cn/recruit-server/controllers"
+	"anydevelop.cn/recruit-server/filter"
 	"github.com/astaxie/beego"
 )
 
 func init() {
+	beego.InsertFilter("/*", beego.BeforeRouter, filter.CORS())
+	beego.Include(&controllers.LoginAdmin{})
 	admin := beego.NewNamespace("/Admin", beego.NSInclude(&controllers.AdminController{}))
 	beego.AddNamespace(admin)
 }
